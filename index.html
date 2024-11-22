@@ -1,0 +1,947 @@
+<html><head><base href="."><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Elegance Body - Cintas & Body Modeladores</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #ff1493;
+  --secondary: #fce4ec;
+  --text: #000000;
+  --accent: #c71585;
+  --background: #1a1a1a;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.shipping-banner {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 0.8rem;
+    font-weight: bold;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1001;
+    animation: slideDown 0.5s ease-out;
+}
+
+.shipping-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    animation: pulse 2s infinite;
+}
+
+.shipping-icon {
+    font-size: 1.2rem;
+    animation: bounce 2s infinite;
+}
+
+.shipping-text {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+.shipping-details {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+.navbar {
+    background: linear-gradient(90deg, black, var(--primary), black);
+    padding: 1.8rem;
+    box-shadow: 0 2px 25px rgba(255,20,147,0.5);
+    animation: navGlow 2s infinite alternate;
+    position: fixed;
+    width: 100%;
+    top: 45px; /* Adjusted for shipping banner height */
+    z-index: 1000;
+}
+
+@keyframes navGlow {
+  from {
+    box-shadow: 0 2px 25px rgba(255,20,147,0.3);
+  }
+  to {
+    box-shadow: 0 2px 25px rgba(255,20,147,0.8);
+  }
+}
+
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.4s;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  position: relative;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+.nav-links a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background: linear-gradient(90deg, transparent, var(--primary), transparent);
+  transition: width 0.4s;
+}
+
+.nav-links a:hover:after {
+  width: 100%;
+}
+
+.nav-links a.active {
+  color: var(--primary);
+  text-shadow: 0 0 10px rgba(255,20,147,0.5);
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 105px; /* Adjusted for combined height of shipping banner and navbar */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, #000000 25%, #ff1493 50%, #000000 75%);
+  background-size: 300% 300%;
+  animation: gradientFlow 15s ease infinite;
+  opacity: 0.8;
+  z-index: 0;
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  color: var(--primary);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  margin-bottom: 1.5rem;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 1.5rem auto;
+    line-height: 1.6;
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.hero-features p {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+.cta-button {
+  background: var(--primary);
+  color: white;
+  padding: 1.2rem 2.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s;
+  display: inline-block;
+  margin-top: 2rem;
+  box-shadow: 0 4px 15px rgba(255,20,147,0.3);
+}
+
+.cta-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(255,20,147,0.4);
+}
+
+.section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  color: var(--primary);
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.benefit-card {
+  background: black;
+  padding: 2.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(255,20,147,0.2);
+  transition: all 0.3s;
+  border: 2px solid var(--primary);
+  color: white;
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(255,20,147,0.3);
+}
+
+.benefit-card h3 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.testimonials {
+  background: black;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.testimonial-card {
+  background: var(--background);
+  padding: 2.5rem;
+  border-radius: 15px;
+  position: relative;
+  border: 2px solid var(--primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255,20,147,0.4);
+}
+
+.testimonial-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card strong {
+    font-size: 1.1rem;
+    color: var(--primary);
+}
+
+.size-guide {
+  overflow-x: auto;
+}
+
+.size-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  background: black;
+  color: white;
+}
+
+.size-table th, .size-table td {
+  padding: 1.2rem;
+  border: 2px solid var(--primary);
+  text-align: center;
+}
+
+.size-table th {
+  background: var(--primary);
+  color: white;
+}
+
+.promotion-banner {
+  background: black;
+  color: white;
+  padding: 3rem;
+  text-align: center;
+  margin: 2rem 0;
+  border-radius: 15px;
+  border: 3px solid var(--primary);
+  box-shadow: 0 5px 25px rgba(255,20,147,0.3);
+}
+
+.promotion-banner h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+@keyframes priceHighlight {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #888;
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+
+.sale-price {
+    color: var(--primary);
+    animation: priceHighlight 2s infinite;
+    display: inline-block;
+}
+
+.black-friday-tag {
+    background: var(--primary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: inline-block;
+    transform: rotate(-5deg);
+    font-weight: bold;
+}
+
+.product-gallery {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    overflow-x: auto;
+    padding: 0.5rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) transparent;
+}
+
+.gallery-thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+.gallery-thumbnail:hover {
+    border-color: var(--primary);
+    transform: scale(1.1);
+}
+
+.product-card {
+    position: relative;
+    max-width: 350px;
+}
+
+/* Style scrollbar for WebKit browsers */
+.product-gallery::-webkit-scrollbar {
+    height: 6px;
+}
+
+.product-gallery::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.product-gallery::-webkit-scrollbar-thumb {
+    background-color: var(--primary);
+    border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.5rem;
+  }
+  
+  .hero {
+    height: auto;
+    padding: 6rem 1rem;
+    margin-top: 125px; /* Adjusted for mobile */
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .product-grid {
+    padding: 0 1rem;
+  }
+  
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  
+  .benefit-card {
+    margin: 1rem;
+  }
+  
+  .size-table {
+    font-size: 0.9rem;
+  }
+  
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .shipping-content {
+      flex-direction: column;
+      gap: 0.3rem;
+  }
+  
+  .shipping-banner {
+      padding: 0.5rem;
+  }
+  
+  .navbar {
+      top: 65px; /* Adjust for mobile */
+  }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin: 4rem auto;
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+.product-card {
+  background: black;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-image {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-card img:hover {
+  transform: scale(1.05);
+}
+
+.product-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255,20,147,0.4);
+}
+
+.product-title {
+  color: var(--primary);
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.price-installment {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.footer {
+    background: black;
+    color: white;
+    padding: 2rem;
+    margin-top: 4rem;
+    border-top: 3px solid var(--primary);
+}
+
+.footer-signature {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(255,20,147,0.3);
+}
+
+.footer-signature .jenny-name {
+    color: var(--primary);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.footer-signature .jenny-title {
+    font-style: italic;
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.shipping-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    border-radius: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.shipping-info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.shipping-info-icon {
+    font-size: 2rem;
+}
+
+.shipping-info-text {
+    text-align: left;
+}
+
+.shipping-info-text h4 {
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.shipping-info-text p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .shipping-info {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .shipping-info-item {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Remove these CSS rules */
+.hero .jenny-signature {
+    display: none;
+}
+
+.hero .founder-signature {
+    display: none;
+}
+</style>
+</head>
+<body>
+<div class="shipping-banner">
+    <div class="shipping-content">
+        <span class="shipping-icon">🚚</span>
+        <span class="shipping-text">FRETE GRÁTIS</span>
+        <span class="shipping-details">PARA TODO O BRASIL</span>
+    </div>
+</div>
+<nav class="navbar">
+    <div class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#benefits">Benefícios</a>
+        <a href="#testimonials">Depoimentos</a>
+        <a href="#size-guide">Guia de Tamanhos</a>
+        <a href="#promotions">Promoções</a>
+    </div>
+</nav>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <h1>Realce Sua Beleza Natural</h1>
+        <p class="hero-description">Descubra a linha exclusiva de cintas e body modeladores da Elegance Body. Nossas peças são desenvolvidas com tecnologia avançada para proporcionar máximo conforto e resultados impressionantes.</p>
+        <div class="hero-features">
+            <p>✨ Tecido tecnológico de alta compressão</p>
+            <p>✨ Modelagem anatômica exclusiva</p>
+            <p>✨ Costura reforçada e acabamento premium</p>
+            <p>✨ Até 10x sem juros e frete grátis</p>
+        </div>
+        <a href="https://loja.elegancebody.com/comprar" class="cta-button">COMPRE AGORA</a>
+    </div>
+</section>
+
+<section id="products" class="section">
+    <h2>Cintas & Body Modeladores</h2>
+    <div class="product-grid">
+        <!-- Corset Modelador -->
+        <div class="product-card" id="product-1">
+            <div class="black-friday-tag">BLACK FRIDAY</div>
+            <div class="product-image">
+                <img alt="Black corset with straps over white turtleneck" src="imagem/corset_modelador_linfodraening_preto_47_1_483e431fad71c3729bce7d71c60f7aa6.webp" width="300" height="400">
+            </div>
+            <div class="product-gallery">
+                <img class="gallery-thumbnail" src="imagem/corset_modelador_linfodraening_preto_47_1_483e431fad71c3729bce7d71c60f7aa6.webp" 
+                     onclick="updateProductImage(1, this.src, 'Black corset with straps over white turtleneck')" 
+                     alt="Thumbnail 1">
+                <img class="gallery-thumbnail" src="imagem/6_02a3db46-3489-4009-a9f0-230b6a2aacb1.webp" 
+                     onclick="updateProductImage(1, this.src, 'Waist cinching vest with compression effect')" 
+                     alt="Thumbnail 2">
+            </div>
+            <h3 class="product-title">Cinta Modeladora</h3>
+            <p class="product-price">
+                <span class="old-price">R$ 189,90</span>
+                <span class="sale-price">R$ 99,90</span>
+            </p>
+            <p class="price-installment">ou 10x de R$ 9,99 sem juros</p>
+            <a href="https://loja.elegancebody.com/corset-modelador" class="cta-button">Comprar Agora</a>
+        </div>
+
+        <!-- Body Modelador -->
+        <div class="product-card" id="product-2">
+            <div class="black-friday-tag">BLACK FRIDAY</div>
+            <div class="product-image">
+                <img alt="Black strapless bodysuit with bow detail" src="imagem/VIL350490_0002-1.webp" width="300" height="400">
+            </div>
+            <div class="product-gallery">
+                <img class="gallery-thumbnail" src="imagem/VIL350490_0002-1.webp" 
+                     onclick="updateProductImage(2, this.src, 'Black strapless bodysuit with bow detail')" 
+                     alt="Thumbnail 1">
+                <img class="gallery-thumbnail" src="imagem/12e0442c5019378722cc111451f5b2a1.jfif" 
+                     onclick="updateProductImage(2, this.src, 'Black bodysuit with sweetheart neckline')" 
+                     alt="Thumbnail 2">
+                <img class="gallery-thumbnail" src="imagem/whatsapp-image-2021-08-12-at-15-04-511-a5486f87a64e35448f16287924017393-1024-1024.jpeg" 
+                     onclick="updateProductImage(2, this.src, 'Black lace bodysuit with front hooks')" 
+                     alt="Thumbnail 3">
+            </div>
+            <h3 class="product-title">Body Modelador Premium</h3>
+            <p class="product-price">
+                <span class="old-price">R$ 179,90</span>
+                <span class="sale-price">R$ 89,90</span>
+            </p>
+            <p class="price-installment">ou 8x de R$ 11,24 sem juros</p>
+            <a href="https://loja.elegancebody.com/body-premium" class="cta-button">Comprar Agora</a>
+        </div>
+
+        <!-- Body Shaper -->
+        <div class="product-card" id="product-3">
+            <div class="black-friday-tag">BLACK FRIDAY</div>
+            <div class="product-image">
+                <img alt="Body shaper with built-in bra" src="imagem/cinta_modeladora_feminina_body_redutor_afina_cintura_bojo_liebe_1036_1_edce6b2419b2da9b81f28ecc540262e1.webp" width="300" height="400">
+            </div>
+            <div class="product-gallery">
+                <img class="gallery-thumbnail" src="imagem/cinta_modeladora_feminina_body_redutor_afina_cintura_bojo_liebe_1036_1_edce6b2419b2da9b81f28ecc540262e1.webp" 
+                     onclick="updateProductImage(3, this.src, 'Body shaper with built-in bra')" 
+                     alt="Thumbnail 1">
+                <img class="gallery-thumbnail" src="imagem/VIL1601_002-1.webp" 
+                     onclick="updateProductImage(3, this.src, 'Front view of black body shaper')" 
+                     alt="Thumbnail 2">
+                <img class="gallery-thumbnail" src="imagem/VIL1601_002-2.webp" 
+                     onclick="updateProductImage(3, this.src, 'Rear view of black body shaper')" 
+                     alt="Thumbnail 3">
+            </div>
+            <h3 class="product-title">Body Shaper Control</h3>
+            <p class="product-price">
+                <span class="old-price">R$ 169,90</span>
+                <span class="sale-price">R$ 94,90</span>
+            </p>
+            <p class="price-installment">ou 10x de R$ 9,49 sem juros</p>
+            <a href="https://loja.elegancebody.com/body-shaper" class="cta-button">Comprar Agora</a>
+        </div>
+    </div>
+</section>
+
+<section id="benefits" class="section">
+    <h2>Benefícios das Nossas Cintas</h2>
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <h3>Modelagem Perfeita</h3>
+            <p>Silhueta harmoniosa e natural com máximo conforto</p>
+        </div>
+        <div class="benefit-card">
+            <h3>Suporte Lombar</h3>
+            <p>Melhora a postura e reduz dores nas costas</p>
+        </div>
+        <div class="benefit-card">
+            <h3>Tecnologia Respirável</h3>
+            <p>Tecido inovador que permite a transpiração natural</p>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="section testimonials">
+    <h2>O Que Nossas Clientes Dizem</h2>
+    <div class="testimonial-grid">
+        <div class="testimonial-card">
+            <p>"Nunca me senti tão confiante! A cinta é super confortável e os resultados são impressionantes. Uso todos os dias e a qualidade se mantém mesmo após várias lavagens."</p>
+            <strong>- Maria Silva</strong>
+        </div>
+        <div class="testimonial-card">
+            <p>"Excelente qualidade e acabamento. A modelagem é perfeita e o suporte ao cliente é excepcional. O produto superou minhas expectativas!"</p>
+            <strong>- Ana Santos</strong>
+        </div>
+        <div class="testimonial-card">
+            <p>"Comprei o body modelador e foi a melhor decisão! A qualidade é excepcional e o caimento é perfeito. Me sinto mais confiante e bonita usando!"</p>
+            <strong>- Carolina Lima</strong>
+        </div>
+        <div class="testimonial-card">
+            <p>"Resultados visíveis desde o primeiro uso! A cinta ajudou muito na minha postura e autoestima. Recomendo para todas as minhas amigas!"</p>
+            <strong>- Patricia Oliveira</strong>
+        </div>
+    </div>
+</section>
+
+<section id="size-guide" class="section">
+    <h2>Guia de Tamanhos</h2>
+    <table class="size-table">
+        <tr>
+            <th>Tamanho</th>
+            <th>Cintura (cm)</th>
+            <th>Quadril (cm)</th>
+        </tr>
+        <tr>
+            <td>P</td>
+            <td>60-70</td>
+            <td>85-95</td>
+        </tr>
+        <tr>
+            <td>M</td>
+            <td>70-80</td>
+            <td>95-105</td>
+        </tr>
+        <tr>
+            <td>G</td>
+            <td>80-90</td>
+            <td>105-115</td>
+        </tr>
+        <tr>
+            <td>GG</td>
+            <td>90-100</td>
+            <td>115-125</td>
+        </tr>
+    </table>
+</section>
+
+<section id="promotions" class="section">
+    <div class="promotion-banner">
+        <h2>Super Oferta Black Friday!</h2>
+        <p style="font-size: 1.4rem; margin: 1.5rem 0;">
+            Compre 1 Cinta + 1 Body e Ganhe <span class="sale-price">20% OFF</span>
+        </p>
+        <p style="color: #888; margin-bottom: 1.5rem;">*Promoção por tempo limitado</p>
+        <a href="https://loja.elegancebody.com/promocao" class="cta-button">APROVEITAR AGORA</a>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="shipping-info">
+        <div class="shipping-info-item">
+            <div class="shipping-info-icon">🚀</div>
+            <div class="shipping-info-text">
+                <h4>Entrega Expressa SEDEX</h4>
+                <p>Receba em até 3 dias úteis</p>
+            </div>
+        </div>
+        <div class="shipping-info-item">
+            <div class="shipping-info-icon">📦</div>
+            <div class="shipping-info-text">
+                <h4>Frete Grátis</h4>
+                <p>Para todo o Brasil</p>
+            </div>
+        </div>
+        <div class="shipping-info-item">
+            <div class="shipping-info-icon">✨</div>
+            <div class="shipping-info-text">
+                <h4>Envio Seguro</h4>
+                <p>Embalagem discreta e segura</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer-signature">
+        <div class="jenny-name">Jenny Albuquerque</div>
+        <p class="jenny-title">CEO & Fundadora da Elegance Body</p>
+        <p>Especialista em Modelagem Corporal</p>
+        <p class="jenny-signature">Transformando vidas através da autoestima desde 2020</p>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            target.scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Update active nav item on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if(scrollY >= (sectionTop - sectionHeight/3)) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Add hover animation for nav items
+    navLinks.forEach(link => {
+        link.addEventListener('mouseover', function() {
+            this.style.transform = 'translateY(-3px)';
+            this.style.textShadow = '0 0 15px rgba(255,20,147,0.8)';
+        });
+        
+        link.addEventListener('mouseout', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.textShadow = 'none';
+        });
+    });
+
+    // Add scroll animation for benefits cards
+    const benefitCards = document.querySelectorAll('.benefit-card');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = 1;
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    });
+
+    benefitCards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'all 0.5s ease-out';
+        observer.observe(card);
+    });
+});
+
+// Add this JavaScript to enable image switching
+function updateProductImage(productId, newSrc, newAlt) {
+    const img = document.querySelector(`#product-${productId} .product-image img`);
+    img.src = newSrc;
+    img.alt = newAlt;
+}
+</script>
+</body></html>
